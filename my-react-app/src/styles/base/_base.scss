@@ -1,8 +1,17 @@
-@use "../abstracts/variables" as variables; 
+@use '../abstracts/variables' as variables;
 
 * {
-    font-family: variables.$main-font;
+  font-family: variables.$main-font;
 }
 a {
-    color: variables.$black;
+  color: variables.$black;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
 }
