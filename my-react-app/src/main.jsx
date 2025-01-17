@@ -5,16 +5,21 @@ import Error from './pages/Error.jsx'
 import Home from './pages/Home';
 import HousingSheet from './pages/HousingSheet';
 import About from './pages/About.jsx';
+import Header from './layout/Header.jsx';
+import Footer from './layout/Footer.jsx';
+import "./styles/app.scss"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/logement' element={<HousingSheet />}/>
+        <Route path='/logement' element={<HousingSheet />}/> {/*Ajout d'un param dans le lien pour aller au logement voulu */}
         <Route path='/a-propos' element={<About />} />
         <Route path='*' element={<Error />}/>
       </Routes>
+      <Footer />
     </Router>
   </StrictMode>,
 )

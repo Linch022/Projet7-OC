@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as variables; 
+@use "../abstracts/mixins";
+
+.footer {
+    background-color: variables.$black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 210px;
+    gap: 12px;
+    @include mixins.device(tablet) {
+        gap: 40px;
+    }
+    &__logo {
+        height: 40px;
+        @include mixins.device(tablet) {
+            margin-top: 20px;
+        }
+    }
+    &__text {
+        width: 30%;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        max-width: fit-content;
+        text-align: center;
+        @include mixins.device(tablet) {
+            font-size: 24px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables" as variables; 
+
+.nav {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+
+    @include mixins.device(tablet) {
+        margin: 40px 80px;
+    }
+    &__logo {
+        height: 46px;
+        @include mixins.device(tablet) {
+            height: 68px;
+        }
+    }
+    &__link-container {
+        display: flex;
+        gap: 26px;
+        justify-content: center;
+        align-items: center;
+        @include mixins.device(tablet) {
+            gap: 60px;
+        }
+    }
+    &__link {
+        font-size: 12px;
+        font-weight: 500;
+        @include mixins.device(tablet) {
+            font-size: 24px;
+        }
+        &--active {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as variables; 
+
+// Mixins pour les breakpoints
+@mixin device($breakpoint) {
+    @if $breakpoint == tablet {
+      @media (min-width: #{variables.$tablet}) {
+        @content;
+      }
+    } @else if $breakpoint == laptop {
+      @media (min-width: #{variables.$laptop}) {
+        @content;
+      }
+    } @else if $breakpoint == xl-laptop {
+      @media (min-width: #{variables.$xl-laptop}) {
+        @content;
+      }
+    }
+  }
