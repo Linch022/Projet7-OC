@@ -1,5 +1,7 @@
-@use "./abstracts/mixins";
-@use "./base/base";
-@use "./base/reset";
-@use "./layout/header";
-@use "./layout/footer";
+@use './abstracts/mixins';
+@use './base/base';
+@use './base/reset';
+@use './layout/header';
+@use './layout/footer';
+@use './layout/body';
+@use './pages/home';

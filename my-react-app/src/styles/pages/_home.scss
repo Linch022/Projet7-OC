@@ -1,0 +1,35 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as variables;
+
+.banner {
+  position: relative;
+  &__img {
+    height: 110px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    filter: brightness(40%);
+    @include mixins.device(tablet) {
+      height: 220px;
+    }
+  }
+  &__txt {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    max-width: 60%;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    @include mixins.device(tablet) {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      font-size: 48px;
+      text-align: center;
+    }
+  }
+}
