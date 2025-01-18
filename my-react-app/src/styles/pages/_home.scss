@@ -1,6 +1,11 @@
 @use '../abstracts/mixins';
 @use '../abstracts/variables' as variables;
 
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .banner {
   position: relative;
   &__img {
@@ -24,12 +29,24 @@
     font-size: 24px;
     font-weight: 700;
     @include mixins.device(tablet) {
+      width: 100%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
       max-width: 100%;
       font-size: 48px;
       text-align: center;
     }
+  }
+}
+
+.card-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+  @include mixins.device(tablet) {
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    background: #f6f6f6;
+    border-radius: 25px;
+    padding: 30px;
   }
 }

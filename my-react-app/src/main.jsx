@@ -7,8 +7,10 @@ import HousingSheet from './pages/HousingSheet';
 import About from './pages/About.jsx';
 import Header from './layout/Header.jsx';
 import Footer from './layout/Footer.jsx';
-import './styles/app.scss';
 import Body from './layout/Body.jsx';
+import data from './logements.json';
+import './styles/app.scss';
+console.log(data);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,9 +18,8 @@ createRoot(document.getElementById('root')).render(
       <Header />
       <Routes>
         <Route element={<Body />}>
-          <Route path='/' element={<Home />} />
-          <Route path='/logement' element={<HousingSheet />} />{' '}
-          {/*Ajout d'un param dans le lien pour aller au logement voulu */}
+          <Route path='/' element={<Home data={data} />} />
+          <Route path='/logement/:id' element={<HousingSheet />} />
           <Route path='/a-propos' element={<About />} />
           <Route path='*' element={<Error />} />
         </Route>
