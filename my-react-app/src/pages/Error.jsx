@@ -1,5 +1,4 @@
 import { Link } from 'react-router';
-import Home from './Home';
 
 function Error() {
   return (

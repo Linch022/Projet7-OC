@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import vector from '../assets/Vector.svg';
+import arrow from '../assets/Vector.svg';
 import PropTypes from 'prop-types';
 
 function Collapse({ collapseData }) {
@@ -19,7 +19,7 @@ function Collapse({ collapseData }) {
           }
           onClick={toggleCollapse}
         >
-          <img src={vector} alt='' />
+          <img src={arrow} alt='' />
         </button>
       </div>
       {isOpen && (

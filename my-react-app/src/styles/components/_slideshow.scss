@@ -1,0 +1,45 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as variables;
+
+.slideshow {
+  position: relative;
+  height: 255px;
+  &__arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    @include mixins.device(tablet) {
+      height: 46px;
+      width: 80px;
+    }
+    cursor: pointer;
+    &--right {
+      transform: translateY(-50%) rotate(270deg);
+      right: 10px;
+      top: 50%;
+    }
+    &--left {
+      transform: translateY(-50%) rotate(90deg);
+      left: 10px;
+      top: 50%;
+    }
+  }
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__counter {
+    display: none;
+    @include mixins.device(tablet) {
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}
