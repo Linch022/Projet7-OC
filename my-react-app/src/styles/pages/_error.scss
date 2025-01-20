@@ -1,0 +1,41 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as variables;
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 110px;
+  text-align: center;
+  height: 100%;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  @include mixins.device(laptop) {
+    margin-top: 0;
+  }
+  &__nmb {
+    font-size: 96px;
+    font-weight: 700;
+    color: #ff6060;
+    @include mixins.device(laptop) {
+      font-size: 280px;
+    }
+  }
+  &__txt {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6060;
+    @include mixins.device(laptop) {
+      font-size: 36px;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    @include mixins.device(laptop) {
+      font-size: 18px;
+    }
+  }
+}
