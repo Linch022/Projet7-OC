@@ -1,0 +1,28 @@
+.collapse-box {
+}
+.collapse-head {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  background-color: #ff6060;
+  padding: 10px;
+  border-radius: 5px;
+  &__title {
+    font-weight: 700;
+    color: white;
+  }
+  &__button {
+    background-color: #ff6060;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 9px;
+      width: 16px;
+      transform: rotate(180deg);
+    }
+  }
+}

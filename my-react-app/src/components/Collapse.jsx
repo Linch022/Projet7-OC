@@ -8,11 +8,13 @@ function Collapse({ collapseData }) {
     setIsOpen(!isOpen);
   };
   return (
-    <div className='collapse'>
-      <p className='collapse__title'>{collapseData.title}</p>
-      <button className='collapse__button' onClick={toggleCollapse}>
-        <img src={vector} alt='' />
-      </button>
+    <>
+      <div className='collapse-head'>
+        <p className='collapse-head__title'>{collapseData.title}</p>
+        <button className='collapse-head__button' onClick={toggleCollapse}>
+          <img src={vector} alt='' />
+        </button>
+      </div>
       {isOpen && (
         <ul>
           {collapseData.content.map((item, index) => (
@@ -20,7 +22,7 @@ function Collapse({ collapseData }) {
           ))}
         </ul>
       )}
-    </div>
+    </>
   );
 }
 

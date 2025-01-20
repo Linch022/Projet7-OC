@@ -32,9 +32,13 @@ function About() {
   return (
     <div className='about-page'>
       <Banner bannerImg={bannerImg} />
-      {collapsesData.map((item, index) => (
-        <Collapse collapseData={item} key={index} />
-      ))}
+      <ul className='about-page__collapse-container'>
+        {collapsesData.map((item, index) => (
+          <li key={index}>
+            <Collapse collapseData={item} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

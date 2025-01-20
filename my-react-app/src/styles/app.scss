@@ -5,5 +5,7 @@
 @use './layout/footer';
 @use './layout/body';
 @use './pages/home';
+@use './pages/about-page';
 @use './components/card';
 @use './components/banner';
+@use './components/collapse';
