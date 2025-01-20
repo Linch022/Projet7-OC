@@ -2,6 +2,7 @@ import Banner from '../components/Banner';
 import bannerImg from '../assets/banner.png';
 import Card from '../components/Card';
 import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 
 function Home({ data }) {
   console.log(data);
@@ -14,7 +15,7 @@ function Home({ data }) {
         {data.map((item) => (
           <Link key={item.id} to={`/logement/${item.id}`}>
             <li className='card-box'>
-              <Card data={item} />
+              <Card data={{ cover: item.cover, title: item.title }} />
             </li>
           </Link>
         ))}
@@ -23,4 +24,13 @@ function Home({ data }) {
   );
 }
 
+Home.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      cover: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 export default Home;

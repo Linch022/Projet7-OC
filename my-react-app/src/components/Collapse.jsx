@@ -28,6 +28,6 @@ Collapse.propTypes = {
   collapseData: PropTypes.shape({
     title: PropTypes.string.isRequired,
     content: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }),
+  }).isRequired,
 };
 export default Collapse;
