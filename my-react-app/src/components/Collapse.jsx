@@ -11,12 +11,19 @@ function Collapse({ collapseData }) {
     <>
       <div className='collapse-head'>
         <p className='collapse-head__title'>{collapseData.title}</p>
-        <button className='collapse-head__button' onClick={toggleCollapse}>
+        <button
+          className={
+            isOpen
+              ? 'collapse-head__button collapse-head__button--open'
+              : 'collapse-head__button'
+          }
+          onClick={toggleCollapse}
+        >
           <img src={vector} alt='' />
         </button>
       </div>
       {isOpen && (
-        <ul>
+        <ul className='collapse-txt'>
           {collapseData.content.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

@@ -1,4 +1,13 @@
-.collapse-box {
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as variables;
+.collapse-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .collapse-head {
   display: flex;
@@ -9,9 +18,15 @@
   background-color: #ff6060;
   padding: 10px;
   border-radius: 5px;
+  @include mixins.device(tablet) {
+    height: 52px;
+  }
   &__title {
     font-weight: 700;
     color: white;
+    @include mixins.device(tablet) {
+      font-size: 24px;
+    }
   }
   &__button {
     background-color: #ff6060;
@@ -23,6 +38,26 @@
       height: 9px;
       width: 16px;
       transform: rotate(180deg);
+      transition: 0.5s;
+      @include mixins.device(tablet) {
+        width: 24px;
+        height: 14px;
+      }
     }
+    &--open {
+      img {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+.collapse-txt {
+  padding: 15px;
+  font-size: 12px;
+  line-height: 18px;
+  @include mixins.device(tablet) {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
