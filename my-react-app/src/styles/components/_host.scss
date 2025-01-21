@@ -1,0 +1,15 @@
+.host {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #ff6060;
+  }
+  &__img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+  }
+}

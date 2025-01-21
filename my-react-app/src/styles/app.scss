@@ -5,9 +5,13 @@
 @use './layout/footer';
 @use './layout/body';
 @use './pages/home';
+@use './pages/housing-sheet';
 @use './pages/about-page';
 @use './pages/error';
 @use './components/card';
 @use './components/banner';
 @use './components/collapse';
 @use './components//slideshow';
+@use './components/ratings';
+@use './components/host';
+@use './components/tag';

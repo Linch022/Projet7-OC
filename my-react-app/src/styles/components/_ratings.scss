@@ -1,0 +1,10 @@
+.ratings {
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  align-items: center;
+  &__star {
+    height: 13px;
+    width: 13px;
+  }
+}

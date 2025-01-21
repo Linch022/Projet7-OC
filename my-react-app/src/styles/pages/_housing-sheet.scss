@@ -1,0 +1,47 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as variables;
+
+.loader-housing-sheet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff6060;
+  font-weight: 500;
+  font-size: 20px;
+  @include mixins.device(tablet) {
+    font-size: 36px;
+  }
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6060;
+  }
+  &__location {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__tags-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  &__host {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
