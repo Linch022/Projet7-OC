@@ -34,9 +34,7 @@ function About() {
       <Banner bannerImg={bannerImg} />
       <ul className='about-page__collapse-container'>
         {collapsesData.map((item, index) => (
-          <li key={index} className='collapse-item'>
-            <Collapse collapseData={item} />
-          </li>
+          <Collapse collapseData={item} key={index} />
         ))}
       </ul>
     </div>

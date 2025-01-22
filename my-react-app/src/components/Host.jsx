@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 
 function Host({ host }) {
+  const name = host.name.replace(/ /g, '\n');
   return (
     <div className='host'>
-      <p className='host__name'>{host.name}</p>
+      <p className='host__name'>{name}</p>
       <img src={host.picture} alt='' className='host__img' />
     </div>
   );

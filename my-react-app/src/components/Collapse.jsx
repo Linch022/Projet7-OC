@@ -8,7 +8,7 @@ function Collapse({ collapseData }) {
     setIsOpen(!isOpen);
   };
   return (
-    <>
+    <li className='collapse-item'>
       <div className='collapse-head'>
         <p className='collapse-head__title'>{collapseData.title}</p>
         <button
@@ -22,14 +22,16 @@ function Collapse({ collapseData }) {
           <img src={arrow} alt='' />
         </button>
       </div>
-      {isOpen && (
-        <ul className='collapse-txt'>
-          {collapseData.content.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      )}
-    </>
+      <ul
+        className={`collapse-txt ${
+          isOpen ? 'collapse-open' : 'collapse-closed'
+        }`}
+      >
+        {collapseData.content.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </li>
   );
 }
 

@@ -5,6 +5,7 @@ import Slideshow from '../components/Slideshow';
 import Tag from '../components/Tag';
 import Ratings from '../components/Ratings';
 import Host from '../components/Host';
+import Collapse from '../components/Collapse';
 
 function HousingSheet({ data }) {
   const [item, setItem] = useState();
@@ -35,9 +36,17 @@ function HousingSheet({ data }) {
             <Tag key={index} tag={tag} />
           ))}
         </ul>
-        <div className='place__host'>
+        <div className='place__host-container'>
           <Ratings rating={item.rating} />
           <Host host={item.host} />
+        </div>
+        <div className='place__collapse-container'>
+          <Collapse
+            collapseData={{ title: 'Description', content: [item.description] }}
+          />
+          <Collapse
+            collapseData={{ title: 'Équipement', content: item.equipments }}
+          />
         </div>
       </div>
     </div>
