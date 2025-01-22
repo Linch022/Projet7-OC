@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #f6f6f6;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 5px;
@@ -55,6 +54,7 @@
 }
 
 .collapse-txt {
+  background-color: #f6f6f6;
   z-index: 1;
   transform: translateY(-40px);
   opacity: 0;
