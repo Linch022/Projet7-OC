@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 function Collapse({ collapseData }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [collapseClass, setCollapseClass] = useState('collapse-txt');
   const toggleCollapse = () => {
+    isOpen
+      ? setCollapseClass('collapse-txt collapse-closed')
+      : setCollapseClass('collapse-txt collapse-open');
     setIsOpen(!isOpen);
   };
   return (
@@ -22,11 +26,7 @@ function Collapse({ collapseData }) {
           <img src={arrow} alt='' />
         </button>
       </div>
-      <ul
-        className={`collapse-txt ${
-          isOpen ? 'collapse-open' : 'collapse-closed'
-        }`}
-      >
+      <ul className={collapseClass}>
         {collapseData.content.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

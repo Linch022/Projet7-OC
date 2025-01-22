@@ -11,6 +11,7 @@
   border-bottom-left-radius: 5px;
 }
 .collapse-head {
+  z-index: 2;
   padding: 10px;
   display: flex;
   flex-direction: row;
@@ -54,13 +55,13 @@
 }
 
 .collapse-txt {
+  z-index: 1;
   transform: translateY(-40px);
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   font-size: 12px;
   line-height: 18px;
-  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
   @include mixins.device(tablet) {
     font-size: 16px;
     line-height: 24px;
