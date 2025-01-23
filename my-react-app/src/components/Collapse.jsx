@@ -12,7 +12,7 @@ function Collapse({ collapseData }) {
     setIsOpen(!isOpen);
   };
   return (
-    <li className='collapse-item'>
+    <div className='collapse-item'>
       <div className='collapse-head'>
         <p className='collapse-head__title'>{collapseData.title}</p>
         <button
@@ -26,19 +26,27 @@ function Collapse({ collapseData }) {
           <img src={arrow} alt='' />
         </button>
       </div>
-      <ul className={collapseClass}>
-        {collapseData.content.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </li>
+
+      {Array.isArray(collapseData.content) ? (
+        <ul className={collapseClass}>
+          {collapseData.content.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <p className={collapseClass}>{collapseData.content}</p>
+      )}
+    </div>
   );
 }
 
 Collapse.propTypes = {
   collapseData: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    content: PropTypes.arrayOf(PropTypes.string).isRequired,
+    content: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.string,
+    ]).isRequired,
   }).isRequired,
 };
 export default Collapse;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Slideshow from '../components/Slideshow';
 import Tag from '../components/Tag';
 import Ratings from '../components/Ratings';
@@ -10,19 +10,31 @@ import Collapse from '../components/Collapse';
 function HousingSheet({ data }) {
   const [item, setItem] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const foundItem = data.find((i) => i.id === id);
-    console.log(data);
-    console.log(id);
-
-    console.log(foundItem);
-
-    setItem(foundItem);
-  }, [id, data]);
+    if (!foundItem) {
+      setItem('inconnu');
+    } else {
+      setItem(foundItem);
+    }
+  }, [data, id]);
 
   if (!item) {
     return <p className='loader-housing-sheet'>Chargement...</p>;
+  } else if (item === 'inconnu') {
+    setTimeout(() => {
+      navigate('/');
+    }, 2000);
+    return (
+      <>
+        <p className='loader-housing-sheet'>
+          Le bien n&apos;a pas été trouvé... <br />
+          Vous allez être redirigé vers l&apos;accueil
+        </p>
+      </>
+    );
   }
 
   return (
@@ -45,7 +57,7 @@ function HousingSheet({ data }) {
       </div>
       <div className='place__collapse-container'>
         <Collapse
-          collapseData={{ title: 'Description', content: [item.description] }}
+          collapseData={{ title: 'Description', content: item.description }}
         />
         <Collapse
           collapseData={{ title: 'Équipement', content: item.equipments }}

@@ -11,15 +11,13 @@ function Home({ data }) {
   return (
     <div className='home'>
       <Banner bannerImg={bannerImg} bannerTxt={bannerTxt} />
-      <ul className='card-container'>
+      <div className='card-container'>
         {data.map((item) => (
           <Link key={item.id} to={`/logement/${item.id}`}>
-            <li className='card-box'>
-              <Card data={{ cover: item.cover, title: item.title }} />
-            </li>
+            <Card data={{ cover: item.cover, title: item.title }} />
           </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

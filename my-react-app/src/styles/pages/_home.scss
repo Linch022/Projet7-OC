@@ -5,19 +5,27 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 40px;
+  align-items: center;
 }
 
 .card-container {
   display: grid;
-  gap: 30px;
+  column-gap: 60px;
+  row-gap: 50px;
   grid-template-columns: 1fr;
   @include mixins.device(tablet) {
-    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    grid-template-columns: repeat(2, minmax(335px, 1fr));
     background: #f6f6f6;
     border-radius: 25px;
-    padding: 30px;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 35px 25px;
   }
   @include mixins.device(xl-laptop) {
     grid-template-columns: repeat(3, minmax(335px, 1fr));
+    column-gap: 60px;
+    row-gap: 50px;
+    padding: 55px 50px;
   }
 }

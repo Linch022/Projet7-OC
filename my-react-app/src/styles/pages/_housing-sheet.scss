@@ -9,6 +9,7 @@
   color: #ff6060;
   font-weight: 500;
   font-size: 20px;
+  text-align: center;
   @include mixins.device(tablet) {
     font-size: 36px;
   }

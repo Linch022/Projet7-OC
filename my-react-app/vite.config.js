@@ -8,4 +8,12 @@ export default defineConfig({
     host: true,
     port: 3000,
   },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/styles.css',
+      },
+    },
+  },
 });

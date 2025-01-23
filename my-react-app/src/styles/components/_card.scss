@@ -1,18 +1,13 @@
 @use '../abstracts/mixins';
 @use '../abstracts/variables' as variables;
 
-.card-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .card {
   height: 255px;
+  width: 335px;
   position: relative;
-  width: 100%;
   @include mixins.device(tablet) {
-    min-width: 335px;
+    width: 340px;
+    height: 340px;
   }
   &__img {
     object-fit: cover;

@@ -34,6 +34,6 @@ function Slideshow({ pictures }) {
 }
 
 Slideshow.propTypes = {
-  pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+  pictures: PropTypes.arrayOf(PropTypes.string),
 };
 export default Slideshow;

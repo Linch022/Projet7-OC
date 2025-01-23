@@ -2,6 +2,13 @@
 @use '../abstracts/variables' as variables;
 .banner {
   position: relative;
+  width: 100%;
+  @include mixins.device(tablet) {
+    width: 760px;
+  }
+  @include mixins.device(xl-laptop) {
+    width: 1240px;
+  }
   &__img {
     height: 110px;
     width: 100%;
@@ -27,8 +34,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
       max-width: 100%;
-      font-size: 48px;
+      font-size: 36px;
       text-align: center;
+    }
+    @include mixins.device(xl-laptop) {
+      font-size: 48px;
     }
   }
 }
