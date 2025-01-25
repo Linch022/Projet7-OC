@@ -27,6 +27,7 @@ function About() {
   ];
   return (
     <div className='about-page'>
+      <h2 className='sr-only'>à propos</h2>
       <Banner bannerImg={bannerImg} />
       <ul className='about-page__collapse-container'>
         {collapsesData.map((item, index) => (

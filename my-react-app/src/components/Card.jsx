@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 function Card({ data }) {
-  console.log(data);
-
   return (
     <>
       <figure className='card'>
-        <img src={data.cover} className='card__img' alt='' />
-        <figcaption className='card__txt'>{data.title}</figcaption>
+        <img
+          src={data.cover}
+          className='card__img'
+          alt={`Illustration de ${data.title}`}
+        />
+        <figcaption className='card__txt'>
+          <h3>{data.title}</h3>
+        </figcaption>
       </figure>
     </>
   );

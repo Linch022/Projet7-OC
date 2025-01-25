@@ -5,7 +5,11 @@ function Host({ host }) {
   return (
     <div className='host'>
       <p className='host__name'>{name}</p>
-      <img src={host.picture} alt='' className='host__img' />
+      <img
+        src={host.picture}
+        alt='Photo du visage de l"hôte'
+        className='host__img'
+      />
     </div>
   );
 }

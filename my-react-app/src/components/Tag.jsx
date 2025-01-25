@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
 function Tag({ tag }) {
-  console.log(tag);
-
   return <li className='tag'>{tag}</li>;
 }
 

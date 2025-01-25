@@ -14,7 +14,7 @@ function Collapse({ collapseData }) {
   return (
     <div className='collapse-item'>
       <div className='collapse-head'>
-        <p className='collapse-head__title'>{collapseData.title}</p>
+        <h3 className='collapse-head__title'>{collapseData.title}</h3>
         <button
           className={
             isOpen
@@ -22,19 +22,29 @@ function Collapse({ collapseData }) {
               : 'collapse-head__button'
           }
           onClick={toggleCollapse}
+          aria-expanded={isOpen}
+          aria-controls={`collapse-content-${collapseData.title}`}
         >
-          <img src={arrow} alt='' />
+          <img src={arrow} alt={isOpen ? 'Fermer' : 'Ouvrir'} />
         </button>
       </div>
 
       {Array.isArray(collapseData.content) ? (
-        <ul className={collapseClass}>
+        <ul
+          className={collapseClass}
+          aria-controls={`collapse-content-${collapseData.title}`}
+        >
           {collapseData.content.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
       ) : (
-        <p className={collapseClass}>{collapseData.content}</p>
+        <p
+          aria-controls={`collapse-content-${collapseData.title}`}
+          className={collapseClass}
+        >
+          {collapseData.content}
+        </p>
       )}
     </div>
   );

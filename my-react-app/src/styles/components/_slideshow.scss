@@ -6,12 +6,16 @@
   height: 255px;
   &__arrow {
     position: absolute;
-    width: 20px;
-    height: 20px;
     cursor: pointer;
-    @include mixins.device(tablet) {
-      height: 46px;
-      width: 80px;
+    background-color: transparent;
+    border: none;
+    img {
+      width: 20px;
+      height: 20px;
+      @include mixins.device(tablet) {
+        height: 46px;
+        width: 80px;
+      }
     }
     &--right {
       transform: translateY(-50%) rotate(270deg);

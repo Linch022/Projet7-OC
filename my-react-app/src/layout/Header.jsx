@@ -5,7 +5,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className='header'>
+    <div className='header' role='banner'>
       <h1>
         <img src={logo} className='header__title' alt='Kasa' />
       </h1>

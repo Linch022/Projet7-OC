@@ -10,6 +10,7 @@ function Home({ data }) {
   const bannerTxt = 'Chez vous, partout et ailleurs';
   return (
     <div className='home'>
+      <h2 className='sr-only'>Accueil</h2>
       <Banner bannerImg={bannerImg} bannerTxt={bannerTxt} />
       <div className='card-container'>
         {data.map((item) => (

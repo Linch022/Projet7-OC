@@ -7,7 +7,11 @@ function Ratings({ rating }) {
   const stars = Array(maxStars).fill(star);
 
   return (
-    <ul className='ratings'>
+    <ul
+      className='ratings'
+      aria-label={`Note : ${rating} sur ${maxStars}`}
+      role='img'
+    >
       {stars.map((star, index) => (
         <li key={index}>
           <img
