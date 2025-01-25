@@ -5,8 +5,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin: auto;
   margin-bottom: 40px;
   align-items: center;
+  @include mixins.device(tablet) {
+    width: 760px;
+  }
+  @include mixins.device(xl-laptop) {
+    width: 1240px;
+  }
 }
 
 .card-container {

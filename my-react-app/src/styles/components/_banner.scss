@@ -3,12 +3,7 @@
 .banner {
   position: relative;
   width: 100%;
-  @include mixins.device(tablet) {
-    width: 760px;
-  }
-  @include mixins.device(xl-laptop) {
-    width: 1240px;
-  }
+  margin: auto;
   &__img {
     height: 110px;
     width: 100%;
