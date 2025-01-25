@@ -11,7 +11,6 @@
   &__collapse-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     @include mixins.device(tablet) {
       width: 85%;
       margin: auto;
