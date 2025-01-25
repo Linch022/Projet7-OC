@@ -1,7 +1,7 @@
 @use '../abstracts/mixins';
 @use '../abstracts/variables' as variables;
 
-.nav {
+.header {
   display: flex;
   margin: 20px;
   justify-content: space-between;
@@ -9,12 +9,15 @@
   @include mixins.device(laptop) {
     margin: 40px 80px;
   }
-  &__logo {
+
+  &__title {
     height: 46px;
     @include mixins.device(tablet) {
       height: 68px;
     }
   }
+}
+.nav {
   &__link-container {
     display: flex;
     gap: 26px;

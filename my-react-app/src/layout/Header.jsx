@@ -5,11 +5,11 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <>
+    <div className='header'>
+      <h1>
+        <img src={logo} className='header__title' alt='Kasa' />
+      </h1>
       <nav className='nav'>
-        <h1>
-          <img src={logo} className='nav__logo' alt='Kasa' />
-        </h1>
         <ul className='nav__link-container'>
           <li>
             <Link
@@ -17,6 +17,8 @@ function Header() {
               className={
                 (pathname === '/' ? 'nav__link--active ' : '') + 'nav__link'
               }
+              role='navigation'
+              aria-current={pathname === '/' ? 'page' : ''}
             >
               Accueil
             </Link>
@@ -28,13 +30,15 @@ function Header() {
                 (pathname === '/a-propos' ? 'nav__link--active ' : '') +
                 'nav__link'
               }
+              role='navigation'
+              aria-current={pathname === '/a-propos' ? 'page' : ''}
             >
               A Propos
             </Link>
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
 
