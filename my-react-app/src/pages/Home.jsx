@@ -10,8 +10,8 @@ function Home({ data }) {
   const bannerTxt = 'Chez vous, partout et ailleurs';
   return (
     <div className='home'>
-      <h2 className='sr-only'>Accueil</h2>
       <Banner bannerImg={bannerImg} bannerTxt={bannerTxt} />
+      <h2 className='sr-only'>Accueil</h2>
       <div className='card-container'>
         {data.map((item) => (
           <Link key={item.id} to={`/logement/${item.id}`}>

@@ -18,11 +18,12 @@
   }
 }
 .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__link-container {
     display: flex;
     gap: 26px;
-    justify-content: center;
-    align-items: center;
     @include mixins.device(tablet) {
       gap: 60px;
     }

@@ -11,9 +11,16 @@
   &__collapse-container {
     display: flex;
     flex-direction: column;
+    gap: 20px;
     @include mixins.device(tablet) {
       width: 85%;
       margin: auto;
+      gap: 30px;
+    }
+    .collapse-item h3 {
+      @include mixins.device(tablet) {
+        font-size: 24px;
+      }
     }
   }
 }

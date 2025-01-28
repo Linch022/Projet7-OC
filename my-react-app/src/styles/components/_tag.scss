@@ -1,12 +1,12 @@
 @use '../abstracts/mixins';
-@use '../abstracts/variables' as variables;
+@use '../abstracts/variables' as *;
 
 .tag {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 18px;
-  background-color: #ff6060;
+  background-color: $primary-color;
   font-size: 10px;
   font-weight: 700;
   color: white;

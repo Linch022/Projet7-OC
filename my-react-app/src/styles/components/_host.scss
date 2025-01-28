@@ -1,3 +1,6 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+
 .host {
   display: flex;
   gap: 10px;
@@ -5,13 +8,20 @@
   &__name {
     font-size: 12px;
     font-weight: 500;
-    color: #ff6060;
+    color: $primary-color;
     text-align: right;
     white-space: pre-wrap;
+    @include mixins.device(tablet) {
+      font-size: 18px;
+    }
   }
   &__img {
     height: 32px;
     width: 32px;
     border-radius: 50%;
+    @include mixins.device(tablet) {
+      height: 64px;
+      width: 64px;
+    }
   }
 }

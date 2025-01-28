@@ -1,5 +1,6 @@
 @use '../abstracts/mixins';
-@use '../abstracts/variables' as variables;
+@use '../abstracts/variables' as *;
+
 .collapse-item {
   position: relative;
   display: flex;
@@ -17,20 +18,21 @@
   justify-content: space-between;
   align-items: center;
   height: 30px;
-  background-color: #ff6060;
+  background-color: $primary-color;
   border-radius: 5px;
   @include mixins.device(tablet) {
     height: 52px;
   }
   &__title {
+    font-size: 13px;
     font-weight: 700;
     color: white;
     @include mixins.device(tablet) {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
   &__button {
-    background-color: #ff6060;
+    background-color: $primary-color;
     border: none;
     display: flex;
     align-items: center;
@@ -58,12 +60,11 @@
   z-index: 1;
   transform: translateY(-40px);
   opacity: 0;
-  max-height: 0;
+  max-height: 0px;
   overflow: hidden;
   font-size: 12px;
   line-height: 18px;
-  padding: 10px;
-  height: 100%;
+  padding: 0px;
   border-radius: 5px;
   @include mixins.device(tablet) {
     font-size: 16px;
@@ -73,27 +74,29 @@
 
 @keyframes open {
   from {
+    max-height: 0px;
     transform: translateY(-40px);
     opacity: 0;
-    max-height: 0;
+    padding: 10px;
   }
   to {
     max-height: 1000px;
     opacity: 1;
     transform: translateY(0);
+    padding: 10px;
   }
 }
 
 @keyframes close {
   from {
-    max-height: 1000px;
+    height: 1000px;
     opacity: 1;
     transform: translateY(0);
   }
   to {
     transform: translateY(-40px);
     opacity: 0;
-    max-height: 0;
+    height: 0;
   }
 }
 

@@ -1,10 +1,21 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as variables;
+
 .ratings {
   display: flex;
   gap: 9px;
   justify-content: center;
   align-items: center;
+  @include mixins.device(tablet) {
+    gap: 12px;
+    height: 36px;
+  }
   &__star {
     height: 13px;
     width: 13px;
+    @include mixins.device(tablet) {
+      height: 24px;
+      width: 24px;
+    }
   }
 }

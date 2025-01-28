@@ -1,12 +1,12 @@
 @use '../abstracts/mixins';
-@use '../abstracts/variables' as variables;
+@use '../abstracts/variables' as *;
 
 .loader-housing-sheet {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ff6060;
+  color: $primary-color;
   font-weight: 500;
   font-size: 20px;
   text-align: center;
@@ -18,26 +18,45 @@
 .place {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 30px;
+  @include mixins.device(tablet) {
+    gap: 40px;
+  }
   &__information {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     @include mixins.device(tablet) {
-      flex-direction: row;
-      justify-content: space-between;
+      gap: 25px;
     }
   }
-  &__header-container {
+  &__name-host {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    justify-content: space-between;
+    gap: 15px;
+    @include mixins.device(tablet) {
+      flex-direction: row;
+    }
+  }
+  &__name-tags-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include mixins.device(tablet) {
+      gap: 20px;
+    }
+  }
+  &__name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
   &__title {
     font-size: 18px;
     font-weight: 500;
-    color: #ff6060;
+    color: $primary-color;
     @include mixins.device(tablet) {
       font-size: 36px;
     }
@@ -58,12 +77,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    @include mixins.device(tablet) {
+      flex-direction: column-reverse;
+      align-items: end;
+    }
   }
   &__collapse-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     @include mixins.device(tablet) {
+      gap: 80px;
       flex-direction: row;
       > * {
         flex: 1 1 50%;

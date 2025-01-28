@@ -4,6 +4,9 @@
 .slideshow {
   position: relative;
   height: 255px;
+  @include mixins.device(tablet) {
+    height: 415px;
+  }
   &__arrow {
     position: absolute;
     cursor: pointer;
