@@ -10,7 +10,6 @@ import Footer from './layout/Footer.jsx';
 import Body from './layout/Body.jsx';
 import data from './logements.json';
 import './styles/app.scss';
-console.log(data);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

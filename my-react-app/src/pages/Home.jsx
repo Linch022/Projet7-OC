@@ -5,8 +5,6 @@ import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 
 function Home({ data }) {
-  console.log(data);
-
   const bannerTxt = 'Chez vous, partout et ailleurs';
   return (
     <div className='home'>
