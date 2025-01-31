@@ -12,9 +12,12 @@
   color: white;
   border-radius: 5px;
   padding: 0 10px;
+  min-width: 84px;
   @include mixins.device(tablet) {
+    min-width: 115px;
     height: 25px;
     font-size: 14px;
     padding: 0 20px;
+    border-radius: 10px;
   }
 }

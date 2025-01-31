@@ -1,40 +1,40 @@
-import { Link, useLocation } from 'react-router';
+import { NavLink, useLocation } from 'react-router';
 import logo from '../assets/LOGO.svg';
 
 function Header() {
-  const { pathname } = useLocation();
+  const { pathname }  = useLocation();  
 
   return (
     <div className='header' role='banner'>
-      <h1>
+      { pathname === "/" ? 
+        <h1>
         <img src={logo} className='header__title' alt='Kasa' />
-      </h1>
+      </h1> 
+      : <img src={logo} className='header__title' alt='Kasa' />
+      }
       <nav className='nav'>
         <ul className='nav__link-container'>
           <li>
-            <Link
+            <NavLink
               to='/'
               className={
-                (pathname === '/' ? 'nav__link--active ' : '') + 'nav__link'
+               ( {isActive}) => (isActive ? 'nav__link--active nav__link' : "nav__link")
               }
               role='navigation'
-              aria-current={pathname === '/' ? 'page' : ''}
             >
               Accueil
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to='/a-propos'
               className={
-                (pathname === '/a-propos' ? 'nav__link--active ' : '') +
-                'nav__link'
-              }
+                ( {isActive}) => (isActive ? 'nav__link--active nav__link' : "nav__link")
+               }
               role='navigation'
-              aria-current={pathname === '/a-propos' ? 'page' : ''}
             >
               A Propos
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

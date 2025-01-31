@@ -7,7 +7,7 @@ function Host({ host }) {
       <p className='host__name'>{name}</p>
       <img
         src={host.picture}
-        alt='Photo du visage de l"hôte'
+        alt=''
         className='host__img'
       />
     </div>

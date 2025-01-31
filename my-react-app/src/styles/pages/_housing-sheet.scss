@@ -18,60 +18,47 @@
 .place {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   margin-bottom: 30px;
-  @include mixins.device(tablet) {
-    gap: 40px;
-  }
-  &__information {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    @include mixins.device(tablet) {
-      gap: 25px;
-    }
-  }
-  &__name-host {
+
+  &__details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
+    margin-bottom: 15px;
     @include mixins.device(tablet) {
       flex-direction: row;
+      margin-bottom: 25px;
     }
   }
-  &__name-tags-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    @include mixins.device(tablet) {
-      gap: 20px;
-    }
-  }
-  &__name-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+
   &__title {
     font-size: 18px;
     font-weight: 500;
     color: $primary-color;
+    margin-bottom: 8px;
     @include mixins.device(tablet) {
       font-size: 36px;
+      margin-bottom: 20px;
     }
   }
   &__location {
     font-size: 14px;
     font-weight: 500;
+    margin-bottom: 8px;
     @include mixins.device(tablet) {
       font-size: 18px;
+      margin-bottom: 20px;
     }
   }
   &__tags-container {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    @include mixins.device(tablet) {
+      gap: 15px;
+    }
+
   }
   &__host-container {
     display: flex;

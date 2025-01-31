@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 function Banner({ bannerImg, bannerTxt }) {
   return (
-    <figure className='banner' role='region' aria-label='Bannière principale'>
+    <figure className='banner'>
       <img
         src={bannerImg}
-        alt='Image représentant un paysage'
+        alt=''
         className='banner__img'
       />
       {bannerTxt ? (

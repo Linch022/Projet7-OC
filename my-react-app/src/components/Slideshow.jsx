@@ -5,33 +5,27 @@ import { useState } from 'react';
 function Slideshow({ pictures }) {
   const [count, setCount] = useState(0);
 
-  const next = (operator) => {
-    setCount((prevCount) =>
-      operator === '+'
-        ? (prevCount + 1) % pictures.length
-        : (prevCount - 1 + pictures.length) % pictures.length
-    );
+  const changeSlide = (number) => {
+    setCount((prevCount) => 
+      (prevCount + number + pictures.length) % pictures.length
+    );    
   };
 
   return (
     <div
       className='slideshow'
-      role='region'
-      aria-label={`Galerie de ${pictures.length} images`}
     >
       <button
-        className='slideshow__arrow slideshow__arrow--right'
-        onClick={() => next('+')}
-        aria-label='Image suivante'
+        className='slideshow__arrow slideshow__arrow--left'
+        onClick={() => changeSlide(-1)}
       >
-        <img src={arrow} alt='' />
+        <img src={arrow} alt='Image précédente' />
       </button>
       <button
-        className='slideshow__arrow slideshow__arrow--left'
-        onClick={() => next('-')}
-        aria-label='Image précédente'
+        className='slideshow__arrow slideshow__arrow--right'
+        onClick={() => changeSlide(+1)}
       >
-        <img src={arrow} alt='' />
+        <img src={arrow} alt='Image suivante' />
       </button>
       <img src={pictures[count]} alt='' className='slideshow__img' />
       <p className='slideshow__counter' aria-label='Compteur d"image :'>{`${

@@ -15,7 +15,7 @@ function HousingSheet({ data }) {
   useEffect(() => {
     const foundItem = data.find((i) => i.id === id);
     if (!foundItem) {
-      setItem('inconnu');
+      navigate("/bien-introuvable");
     } else {
       setItem(foundItem);
     }
@@ -23,30 +23,14 @@ function HousingSheet({ data }) {
 
   if (!item) {
     return <p className='loader-housing-sheet'>Chargement...</p>;
-  } else if (item === 'inconnu') {
-    setTimeout(() => {
-      navigate('/');
-    }, 2000);
+  } 
     return (
-      <>
-        <p className='loader-housing-sheet'>
-          Le bien n&apos;a pas été trouvé... <br />
-          Vous allez être redirigé vers l&apos;accueil
-        </p>
-      </>
-    );
-  }
-
-  return (
-    <div className='place'>
+      <div className='place'>
       <Slideshow pictures={item.pictures} />
-      <div className='place__information'>
-        <div className='place__name-host'>
+        <div className='place__details'>
           <div className='place__name-tags-container'>
-            <div className='place__name-container'>
-              <h2 className='place__title'>{item.title}</h2>
+              <h1 className='place__title'>{item.title}</h1>
               <p className='place__location'>{item.location}</p>
-            </div>
             <ul className='place__tags-container'>
               {item.tags.map((tag, index) => (
                 <Tag key={index} tag={tag} />
@@ -61,13 +45,12 @@ function HousingSheet({ data }) {
         <div className='place__collapse-container'>
           <Collapse
             collapseData={{ title: 'Description', content: item.description }}
-          />
+            />
           <Collapse
             collapseData={{ title: 'Équipement', content: item.equipments }}
-          />
+            />
         </div>
       </div>
-    </div>
   );
 }
 

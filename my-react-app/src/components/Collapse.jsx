@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import arrow from '../assets/Vector.svg';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router';
 
 function Collapse({ collapseData }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,10 +12,15 @@ function Collapse({ collapseData }) {
       : setCollapseClass('collapse-txt collapse-open');
     setIsOpen(!isOpen);
   };
+  const { pathname } = useLocation();
+
   return (
     <div className='collapse-item'>
       <div className='collapse-head'>
-        <h3 className='collapse-head__title'>{collapseData.title}</h3>
+        { pathname === "/" ?
+          <h3 className='collapse-head__title'>{collapseData.title}</h3> :
+          <h2 className='collapse-head__title'>{collapseData.title}</h2>
+        }
         <button
           className={
             isOpen

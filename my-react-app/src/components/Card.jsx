@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
-function Card({ data }) {
+import { Link } from 'react-router';
+function Card({item}) {
+ 
   return (
-    <>
-      <figure className='card'>
+    <Link to={`/logement/${item.id}`}>
+      <article className='card'>
         <img
-          src={data.cover}
+          src={item.cover}
           className='card__img'
-          alt={`Illustration de ${data.title}`}
+          alt=""
         />
-        <figcaption className='card__txt'>
-          <h3>{data.title}</h3>
-        </figcaption>
-      </figure>
-    </>
+          <h3 className='card__txt'>{item.title}</h3>
+      </article>
+    </Link>
   );
 }
 Card.propTypes = {
-  data: PropTypes.shape({
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
