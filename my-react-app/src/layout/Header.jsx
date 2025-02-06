@@ -2,7 +2,9 @@ import { NavLink, useLocation } from 'react-router';
 import logo from '../assets/LOGO.svg';
 
 function Header() {
-  const { pathname }  = useLocation();  
+  const { pathname }  = useLocation();
+
+  
 
   return (
     <header className='header' role='banner'>

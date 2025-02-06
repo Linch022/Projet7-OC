@@ -15,15 +15,17 @@ function Slideshow({ pictures }) {
     <div
       className='slideshow'
     >
+      { pictures.length > 1 ?
+      <>
       <button
         className='slideshow__arrow slideshow__arrow--left'
         onClick={() => changeSlide(-1)}
-      >
+        >
         <img src={arrow} alt='Image précédente' />
       </button>
       <button
-        className='slideshow__arrow slideshow__arrow--right'
-        onClick={() => changeSlide(+1)}
+      className='slideshow__arrow slideshow__arrow--right'
+      onClick={() => changeSlide(+1)}
       >
         <img src={arrow} alt='Image suivante' />
       </button>
@@ -31,6 +33,10 @@ function Slideshow({ pictures }) {
       <p className='slideshow__counter' aria-label='Compteur d"image :'>{`${
         count + 1
       }/${pictures.length}`}</p>
+      </> 
+        : 
+        <img src={pictures[count]} alt='' className='slideshow__img' />
+      }
     </div>
   );
 }
