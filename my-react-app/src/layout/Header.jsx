@@ -5,7 +5,7 @@ function Header() {
   const { pathname }  = useLocation();  
 
   return (
-    <div className='header' role='banner'>
+    <header className='header' role='banner'>
       { pathname === "/" ? 
         <h1>
         <img src={logo} className='header__title' alt='Kasa' />
@@ -38,7 +38,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 

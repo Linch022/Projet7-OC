@@ -3,11 +3,18 @@
 
 .header {
   display: flex;
-  margin: 20px 0px;
+  margin: 20px auto;
   justify-content: space-between;
+  width: 335px;
 
-  @include mixins.device(laptop) {
-    margin: 40px 0px;
+  @include mixins.device(tablet) {
+    margin: 50px auto;
+    width: 750px;
+  }
+
+  @include mixins.device(xl-laptop) {
+    width: 1240px;
+    margin: 50px auto;
   }
 
   &__title {

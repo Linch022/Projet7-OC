@@ -9,10 +9,12 @@ import Footer from './layout/Footer.jsx';
 import Body from './layout/Body.jsx';
 import data from './logements.json';
 import './styles/app.scss';
+import Header from './layout/Header';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
+      <Header />
       <Routes>
         <Route element={<Body />}>
           <Route path='/' element={<Home data={data} />} />
